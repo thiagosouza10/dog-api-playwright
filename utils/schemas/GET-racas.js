@@ -1,0 +1,20 @@
+export const schema = {
+    type: 'object',
+    required: ['message', 'status'],
+    properties: {
+        status: {
+            type: 'string',
+            enum: ['success']
+        },
+        message: {
+            type: 'object',
+            minProperties: 1,
+            additionalProperties: {
+                type: 'array',
+                items: {
+                    type: 'string'
+                }
+            }
+        }
+    }
+};
