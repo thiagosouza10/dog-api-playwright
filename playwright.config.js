@@ -3,11 +3,11 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  workers: 5,
+  workers: 6,
 
   reporter: [
     ['line'],
-    ['html', { open: 'always' }]
+    ['html', { open: 'never' }]
   ],
 
   use: {
