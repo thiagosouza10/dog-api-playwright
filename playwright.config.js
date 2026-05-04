@@ -6,7 +6,7 @@ export default defineConfig({
   workers: 6,
 
   reporter: [
-    ['line'],
+    ['list'],
     ['html', { open: 'never' }]
   ],
 
