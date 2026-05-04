@@ -15,9 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "allure-clean-results": "rm -rf ./allure-results",
-    "tests": "npm run allure-clean-results && npx playwright test",
-    "allure": "allure generate ./allure-results -o ./allure-report --clean && npx allure open ./allure-report"
+    "tests": "npx playwright test",
+    "report": "npx playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
