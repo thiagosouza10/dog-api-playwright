@@ -1,7 +1,7 @@
 # Projeto Dog API - Testes Automatizados (Playwright)
 
 Projeto de testes automatizados para a Dog API utilizando Playwright.
-- ***Dog API*: https://dog.ceo/dog-api/documentation
+- **Dog API*: https://dog.ceo/dog-api/documentation
 
 ## Pré-requisitos
 
