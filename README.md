@@ -70,6 +70,8 @@ npm run report
 ```
 
 ## Rodando os testes no GitHub Actions
+OBS: Para executar os testes via GitHub Actions, é necessário adicionar o seu usuário como colaborador no repositório.
+Essa liberação é necessária para que os workflows funcionem corretamente no ambiente do projeto. 
 
 ### Como executar manualmente
 
