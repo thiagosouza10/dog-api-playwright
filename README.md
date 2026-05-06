@@ -11,7 +11,6 @@ Projeto de testes automatizados para a Dog API utilizando Playwright.
 ## Arquitetura
 
 ```
-├── .github/workflows/  # GitHub Actions (playwright.yml)
 ├── docs/               # Documentação e evidências
 │   ├── bugs/
 │   ├── casos-de-testes/
@@ -20,17 +19,25 @@ Projeto de testes automatizados para a Dog API utilizando Playwright.
 │   ├── GET-imagens-raca.spec.js
 │   ├── GET-imagens-raca-random.spec.js
 │   └── GET-racas.spec.js
-├── utils/              # Utilitários e schemas
-│   ├── paths.js
+├── utils/              # Utilitários, schemas e serviços
 │   ├── utils.js
-│   └── schemas/
-│       ├── GET-imagens-raca.js
-│       ├── GET-imagens-raca-random.js
-│       ├── GET-racas.js
-│       └── validador-schema.js
+│   ├── schemas/
+│   │   ├── GET-imagens-raca.js
+│   │   ├── GET-imagens-raca-random.js
+│   │   ├── GET-racas.js
+│   │   └── validador-schema.js
+│   └── services/
+│       └── dog-service.js
 ├── playwright.config.js
-└── package.json
+├── playwright-report/
+├── test-results/
+├── package.json
+└── README.md
 ```
+
+**Notas sobre a arquitetura:**
+- O arquivo `utils/services/dog-service.js` foi introduzido para centralizar as interações com a API Dog, encapsulando métodos para requisições HTTP.
+- O arquivo `paths.js` foi removido, pois os caminhos da API agora são definidos diretamente no serviço `dog-service.js`.
 
 ## Pasta docs
 
