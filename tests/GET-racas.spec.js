@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { path } from '../utils/paths.js';
 import { validarSchemas } from '../utils/schemas/validador-schema.js';
 import { schema } from '../utils/schemas/GET-racas.js';
 import { DogService } from '../utils/services/dog-service.js';
 
 
 test.describe('GET-Listagem de raças de cães', () => {
+    /** @type {DogService} */
     let dogService;
 
     test.beforeEach(async ({ request }) => {
@@ -42,7 +42,7 @@ test.describe('GET-Listagem de raças de cães', () => {
     });
 
     test('Deve retornar 404 para endpoint inválido', async ({ request }, testInfo) => {
-        const res  = await dogService.getBreedsListAll(testInfo, '/breeds/list/invalid');
+        const res = await dogService.getBreedsListAll(testInfo, '/breeds/list/invalid');
 
         expect(res.response.status()).toBe(404);
     });

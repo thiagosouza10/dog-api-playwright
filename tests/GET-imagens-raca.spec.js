@@ -1,17 +1,16 @@
 import { test, expect } from '@playwright/test';
-import { path } from '../utils/paths.js';
 import { validarSchemas } from '../utils/schemas/validador-schema.js';
 import { schema } from '../utils/schemas/GET-imagens-raca.js';
 import { DogService } from '../utils/services/dog-service.js';
 
 
 test.describe('GET-Listagem de imagens de uma raça específica', () => {
-
+    /** @type {DogService} */
     let dogService;
     let raca = 'bulldog';
 
     test.beforeEach(async ({ request }) => {
-        dogService = new DogService(request); 
+        dogService = new DogService(request);
     });
 
     test('Deve validar contrato', async ({ request }, testInfo) => {
@@ -36,7 +35,7 @@ test.describe('GET-Listagem de imagens de uma raça específica', () => {
 
     test('Não Deve retornar imagens para raça que não existe', async ({ request }, testInfo) => {
         const { response, body } = await dogService.getBreedImages(testInfo, 'gato');
-        
+
         expect(response.status()).toBe(404);
         expect(body).toEqual({
             "status": "error",
