@@ -14,6 +14,7 @@ test.describe('GET-Listagem de raças de cães', () => {
 
     test('Deve validar contrato', async ({ request }, testInfo) => {
         const { response, body } = await dogService.getBreedsListAll(testInfo);
+        
         expect(response.status()).toBe(200);
         expect(response.headers()['content-type']).toContain('application/json');
         validarSchemas.validarSchema({ body: body, schema: schema });
